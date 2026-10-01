@@ -1,0 +1,382 @@
+[
+    {
+    "id":"cpu1",
+    "name": "Core i5-14400F",
+    "category":"CPU",
+    "brand": "Intel",
+    "price": 18999,
+    "processor": "Intel Core i5-14400F",
+    "img":"https://tse2.mm.bing.net/th/id/OIP.BhSD9lq-m_EZRdtJMGtR-gHaFO?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id":"cpu2",
+    "name": "Core i7-14700K",
+    "category":"CPU",
+    "brand": "Intel",
+    "price": 34999,
+    "processor": "Intel Core i7-14700K",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.DjevbAE-mA8n3coSbQVJeQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id":"cpu3",
+    "name": "Ryzen 5 7600",
+    "category":"CPU",
+    "brand": "AMD",
+    "price": 18999,
+    "processor": "AMD Ryzen 5 7600",
+    "img":"https://c1.neweggimages.com/productimage/nb1280/19-113-798-01.jpg"
+  },
+  {
+    "id":"cpu4",
+    "name": "Ryzen 7 7800X3D",
+    "category":"CPU",
+    "brand": "AMD",
+    "price": 36999,
+    "processor": "AMD Ryzen 7 7800X3D",
+    "img":"https://tse3.mm.bing.net/th/id/OIP.7CpjqRiZhTz_qJ8wfCEwDQHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id":"cpu5",
+    "name": "Ryzen 9 7900X",
+    "category":"CPU",
+    "brand": "AMD",
+    "price": 42999,
+    "processor": "AMD Ryzen 9 7900X",
+    "img":"https://cf.shopee.tw/file/df2a997a609fafc5f27c6b20892ace09"
+  },
+  {
+  "id": "gpu1",
+  "name": "GeForce RTX 4060",
+  "category": "GPU",
+  "brand": "NVIDIA",
+  "price": 29999,
+  "processor": "NVIDIA GeForce RTX 4060",
+  "img":"https://m.media-amazon.com/images/I/817G0HRzaZL._AC_.jpg"
+},
+
+{
+  "id": "gpu2",
+  "name": "GeForce RTX 4060 Ti",
+  "category": "GPU",
+  "brand": "NVIDIA",
+  "price": 39999,
+  "processor": "NVIDIA GeForce RTX 4060 Ti",
+  "img":"https://m.media-amazon.com/images/I/71QvZTnJm+L._AC_.jpg"
+},
+
+{
+  "id": "gpu3",
+  "name": "GeForce RTX 4070 Super",
+  "category": "GPU",
+  "brand": "NVIDIA",
+  "price": 59999,
+  "processor": "NVIDIA GeForce RTX 4070 Super",
+  "img":"https://m.media-amazon.com/images/I/71qIJjDVfzL._AC_.jpg"
+},
+
+{
+  "id": "gpu4",
+  "name": "Radeon RX 7800 XT",
+  "category": "GPU",
+  "brand": "AMD",
+  "price": 49999,
+  "processor": "AMD Radeon RX 7800 XT",
+  "img":"https://tse3.mm.bing.net/th/id/OIP.gblpJeP88K2F8gwKaLB9XgHaGo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+{
+  "id": "gpu5",
+  "name": "Radeon RX 7900 XTX",
+  "category": "GPU",
+  "brand": "AMD",
+  "price": 89999,
+  "processor": "AMD Radeon RX 7900 XTX",
+  "img":"https://m.media-amazon.com/images/I/81il2WdPPJL._AC_.jpg"
+}
+,
+{
+  "id": "motherboard1",
+  "name": "B760M-A WIFI",
+  "category": "Motherboard",
+  "brand": "ASUS",
+  "price": 14999,
+  "processor": "Intel LGA1700",
+  "img":"https://th.bing.com/th/id/OIP.KBHAcXlvx-oSSyxiV5jCUQHaEj?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+{
+  "id": "motherboard2",
+  "name": "MAG B760 Tomahawk WIFI",
+  "category": "Motherboard",
+  "brand": "MSI",
+  "price": 18999,
+  "processor": "Intel LGA1700",
+  "img":"https://tse4.mm.bing.net/th/id/OIP.KQ_ed4W2O-BZHoiCne2ZfgHaE_?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+{
+  "id": "motherboard3",
+  "name": "B650 Gaming X AX",
+  "category": "Motherboard",
+  "brand": "Gigabyte",
+  "price": 17999,
+  "processor": "AMD AM5",
+  "img":"https://m.media-amazon.com/images/I/81vtcmUUsPL._AC_.jpg"
+},
+
+{
+  "id": "motherboard4",
+  "name": "ROG Strix B650-A Gaming WIFI",
+  "category": "Motherboard",
+  "brand": "ASUS",
+  "price": 22999,
+  "processor": "AMD AM5",
+  "img":"https://dlcdnwebimgs.asus.com/files/media/3151EBBB-8450-43F6-9994-D7E5E6A9D0E5/v1/img/kv/ROG-Strix-B650-A-Gaming.png"
+},
+{
+    "id": "ram1",
+    "name": "Corsair Vengeance DDR5 16GB",
+    "category": "RAM",
+    "brand": "Corsair",
+    "price": 4999,
+    "processor": "DDR5",
+    "img":"https://nexushub.co.za/images/products/00270/awxpch234773.jpg"
+  },
+  {
+    "id": "ram2",
+    "name": "G.Skill Trident Z5 RGB 32GB",
+    "category": "RAM",
+    "brand": "G.Skill",
+    "price": 10999,
+    "processor": "DDR5",
+    "img":"https://tse2.mm.bing.net/th/id/OIP.Sr63rlq2kHIYznZkd7A1rQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "ram3",
+    "name": "Kingston Fury Beast DDR4 16GB",
+    "category": "RAM",
+    "brand": "Kingston",
+    "price": 2999,
+    "processor": "DDR4",
+    "img":"https://tse3.mm.bing.net/th/id/OIP.DNX8l0Th4xk-KHO4vqcX0QHaEe?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "storage1",
+    "name": "Samsung 990 EVO Plus 1TB NVMe SSD",
+    "category": "SSD/HDD",
+    "brand": "Samsung",
+    "price": 8999,
+    "processor": "M.2 NVMe PCIe 4.0",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.8io8fFAHqWiSsNgwLU-CswHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "storage2",
+    "name": "WD Black SN770 1TB NVMe SSD",
+    "category": "SSD/HDD",
+    "brand": "Western Digital",
+    "price": 7499,
+    "processor": "M.2 NVMe PCIe 4.0",
+    "img":"https://tse3.mm.bing.net/th/id/OIP.TJ_R0D-axXl2O8-TU1A3NAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "storage3",
+    "name": "Crucial BX500 1TB SATA SSD",
+    "category": "SSD/HDD",
+    "brand": "Crucial",
+    "price": 5999,
+    "processor": "2.5-inch SATA",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.Xqqoe1FSBNgWrn30mVk4qAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "storage4",
+    "name": "Seagate Barracuda 2TB HDD",
+    "category": "SSD/HDD",
+    "brand": "Seagate",
+    "price": 5499,
+    "processor": "3.5-inch SATA",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.QEj7IZOUjHxVIz3EzwilQAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+
+  },
+  {
+    "id": "psu1",
+    "name": "Corsair CV650 650W 80+ Bronze",
+    "category": "PSU",
+    "brand": "Corsair",
+    "price": 5499,
+    "processor": "650W",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.RgIkqh1gKhiwF3uB6vPnmQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "psu2",
+    "name": "Cooler Master MWE 750W 80+ Gold",
+    "category": "PSU",
+    "brand": "Cooler Master",
+    "price": 8999,
+    "processor": "750W",
+    "img":"https://tse3.mm.bing.net/th/id/OIP.yJvcAcX_htnpdha2Az5hugHaHu?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "psu3",
+    "name": "DeepCool PK650D 650W 80+ Bronze",
+    "category": "PSU",
+    "brand": "DeepCool",
+    "price": 4999,
+    "processor": "650W",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.iQa_R15ag-Q_r8haXeyugAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+
+  },
+  {
+    "id": "case1",
+    "name": "NZXT H5 Flow Mid-Tower",
+    "category": "PC Case",
+    "brand": "NZXT",
+    "price": 7499,
+    "processor": "ATX / Micro-ATX / Mini-ITX",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.redyWhRicLffubaaWPOZJwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "case2",
+    "name": "Corsair 4000D Airflow",
+    "category": "PC Case",
+    "brand": "Corsair",
+    "price": 8999,
+    "processor": "ATX / Micro-ATX / Mini-ITX",
+    "img":"https://tse1.mm.bing.net/th/id/OIP.ENQ6d5iwy04leFpvdvA-6wHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "case3",
+    "name": "Ant Esports ICE-112 Auto RGB",
+    "category": "PC Case",
+    "brand": "Ant Esports",
+    "price": 3999,
+    "processor": "ATX / Micro-ATX / Mini-ITX",
+    "img":"https://www.pcstudio.in/wp-content/uploads/2023/08/Ant-Esports-ICE-112-Auto-RGB-ATX-Mid-Tower-Cabinet-1.webp"
+    },
+  {
+    "id": "cooler1",
+    "name": "DeepCool AK400 CPU Air Cooler",
+    "category": "CPU Cooler",
+    "brand": "DeepCool",
+    "price": 2499,
+    "processor": "Intel / AMD AM4 / AM5",
+    "img":"https://m.media-amazon.com/images/I/71a0RyG7a+L._AC_SL1500_.jpg"
+  },
+  {
+    "id": "cooler2",
+    "name": "Cooler Master Hyper 212 Halo",
+    "category": "CPU Cooler",
+    "brand": "Cooler Master",
+    "price": 3499,
+    "processor": "Intel / AMD AM4 / AM5",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.johLh3GvzM4xxNrgDpoLngHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "cooler3",
+    "name": "DeepCool LS520 SE 240mm Liquid Cooler",
+    "category": "CPU Cooler",
+    "brand": "DeepCool",
+    "price": 6999,
+    "processor": "Intel / AMD AM4 / AM5",
+    "img":"https://tse1.mm.bing.net/th/id/OIP.wzdFOf3gVqpwuL6z2qYllgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "cooler4",
+    "name": "NZXT Kraken 360 RGB Liquid Cooler",
+    "category": "CPU Cooler",
+    "brand": "NZXT",
+    "price": 15999,
+    "processor": "Intel / AMD AM4 / AM5",
+    "img":"https://m.media-amazon.com/images/I/41Yat2-orIL._SL1000_.jpg"
+  },
+  {
+    "id": "fan1",
+    "name": "Cooler Master SickleFlow 120 ARGB",
+    "category": "Fans",
+    "brand": "Cooler Master",
+    "price": 999,
+    "processor": "120mm ARGB",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.cmamwEjJfmMJ2L8W_gBnCQHaHa?r=0&w=1500&h=1500&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "fan2",
+    "name": "DeepCool FC120 120mm ARGB",
+    "category": "Fans",
+    "brand": "DeepCool",
+    "price": 1499,
+    "processor": "120mm ARGB",
+    "img":"https://tse3.mm.bing.net/th/id/OIP.4GFifdDJ_qE93mUv-KoZkwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "monitor1",
+    "name": "LG UltraGear 24GN60R 24-inch",
+    "category": "Monitors",
+    "brand": "LG",
+    "price": 10999,
+    "processor": "24-inch FHD 144Hz IPS",
+    "img":"https://tse4.mm.bing.net/th/id/OIP.FSzdVigRvdWed6Tn-FCpEwHaE6?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "monitor2",
+    "name": "Samsung Odyssey G5 27-inch",
+    "category": "Monitors",
+    "brand": "Samsung",
+    "price": 19999,
+    "processor": "27-inch QHD 144Hz",
+    "img":"https://m.media-amazon.com/images/I/81cSdJuBbFL._AC_SL1500_.jpg"
+  },
+  {
+    "id": "monitor3",
+    "name": "Acer Nitro VG240Y 23.8-inch",
+    "category": "Monitors",
+    "brand": "Acer",
+    "price": 8999,
+    "processor": "23.8-inch FHD 180Hz IPS",
+    "img":"https://m.media-amazon.com/images/I/81JEtpxPZoL.jpg"
+  },
+  {
+    "id": "accessory1",
+    "name": "Logitech G102 LIGHTSYNC Gaming Mouse",
+    "category": "Other PC accessories",
+    "brand": "Logitech",
+    "price": 1499,
+    "processor": "Wired USB",
+    "img":"https://tse2.mm.bing.net/th/id/OIP.f3Abmwj5MHF9n9m66L6rJQHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "accessory2",
+    "name": "Redragon K552 Kumara Mechanical Keyboard",
+    "category": "Other PC accessories",
+    "brand": "Redragon",
+    "price": 2999,
+    "processor": "Mechanical USB",
+    "img":"https://tse2.mm.bing.net/th/id/OIP.TTDG4-eRHHZ3W6Ac8BSLSAHaFj?r=0&w=990&h=743&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "accessory3",
+    "name": "HyperX Cloud Stinger 2 Gaming Headset",
+    "category": "Other PC accessories",
+    "brand": "HyperX",
+    "price": 3999,
+    "processor": "3.5mm Wired",
+    "img":"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6518/6518171cv18d.jpg"
+
+  },
+  {
+    "id": "accessory4",
+    "name": "Logitech C270 HD Webcam",
+    "category": "Other PC accessories",
+    "brand": "Logitech",
+    "price": 1999,
+    "processor": "720p USB",
+    "img":"https://th.bing.com/th/id/R.d6798d8943ddead123387abf5fa1562d?rik=NQqmdATqW%2boxPw&riu=http%3a%2f%2fimage.darty.com%2fimage_son%2fphoto_numerique%2fwebcam%2flogitech_c270_k1605184225074A_152139673.jpg&ehk=yGK1r7LTPM7Wc6b8Q84Dt41T%2fEEWE1ukhJwFZfBj5zk%3d&risl=&pid=ImgRaw&r=0"
+  },
+  {
+    "id": "accessory5",
+    "name": "TP-Link Archer T2U Nano Wi-Fi Adapter",
+    "category": "Other PC accessories",
+    "brand": "TP-Link",
+    "price": 999,
+    "processor": "USB Wi-Fi AC600",
+    "img":"https://tse1.mm.bing.net/th/id/OIP.dTAJciUStcOVj1n3Fita8QHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  }
+]
