@@ -71,271 +71,667 @@ const page = () => {
        })
     }
 
-    if(cart.length==0){
-        return(
-            <div className='w-screen min-h-screen bg-[#0d0a14]  '>
-               
-       <section className=' w-full h-full text-center text-5xl pt-20'>
-        <div>
-            <h2>🛒 Cart is empty</h2>
-        </div>
-       </section>
-            </div>
-        )
-    }
+    if (cart.length === 0) {
   return (
-    <div className='w-screen min-h-screen bg-[#0d0a14] '>
-    
-       <section className="pt-6 sm:pt-10 px-3 sm:px-6">
-  <div className="flex flex-col gap-4 sm:gap-5 max-w-4xl mx-auto">
+    <div className="min-h-screen w-full bg-black text-white">
 
-    {cart?.map((e) => {
-      return (
-        <div
-          key={e.id}
-          className="w-full flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 rounded-xl border border-gray-800 bg-[#111] p-3 sm:p-4 hover:border-purple-500/40 transition"
-        >
+      {/* Empty Cart */}
+      <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden px-5 pt-20">
 
-          {/* Product Image + Details */}
-          <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+        {/* Ambient glow */}
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3ABAE9]/10 blur-[120px]" />
 
-            <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg bg-gray-900 flex items-center justify-center overflow-hidden">
-              <img
-                src={e.img}
-                alt={e.name}
-                className="w-full h-full object-contain"
-              />
-            </div>
+        <div className="relative z-10 w-full max-w-lg text-center">
 
-            <div className="flex-1 min-w-0">
-
-              <h2 className="text-sm sm:text-base font-semibold text-white truncate">
-                {e.name}
-              </h2>
-
-              <p className="text-xs text-gray-400 mt-1">
-                Brand:{" "}
-                <span className="text-gray-300">
-                  {e.brand}
-                </span>
-              </p>
-
-              <p className="text-xs text-gray-400">
-                Processor:{" "}
-                <span className="text-gray-300">
-                  {e.processor}
-                </span>
-              </p>
-
-              <p className="text-sm font-semibold text-purple-400 mt-1">
-                ₹{(e.price * e.qty).toLocaleString("en-IN")}
-              </p>
-
-            </div>
+          <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-2xl border border-[#3ABAE9]/20 bg-[#3ABAE9]/5 shadow-[0_0_50px_rgba(58,186,233,0.08)]">
+            <span className="text-4xl">🛒</span>
           </div>
 
-          {/* Quantity Controls */}
-          <div className="flex items-center justify-between sm:justify-end gap-3">
+          <p className="mt-8 text-xs font-bold uppercase tracking-[0.25em] text-[#3ABAE9]">
+            Shopping Cart
+          </p>
 
-            <span className="text-xs text-gray-500 sm:hidden">
-              Quantity
-            </span>
+          <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
+            Your cart is empty
+          </h2>
 
-            <div className="flex items-center shrink-0 rounded-lg border border-gray-700 bg-[#181818] overflow-hidden">
+          <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-gray-500">
+            Looks like you haven't added any components yet.
+            Explore our premium PC hardware and start building your system.
+          </p>
 
-              <button
-                onClick={() => decqty(e.id, e.qty)}
-                className="w-9 h-9 flex items-center justify-center text-gray-300 hover:bg-purple-600 hover:text-white transition"
-              >
-                −
-              </button>
-
-              <span className="w-9 h-9 flex items-center justify-center text-sm font-medium text-white border-x border-gray-700">
-                {e.qty}
-              </span>
-
-              <button
-                onClick={() => incqty(e.id, e.qty)}
-                className="w-9 h-9 flex items-center justify-center text-gray-300 hover:bg-purple-600 hover:text-white transition"
-              >
-                +
-              </button>
-
-            </div>
-          </div>
-
-        </div>
-      );
-    })}
-
-  </div>
-</section>
-<section className="pt-10 sm:pt-16 lg:pt-20 px-3 sm:px-6 pb-10">
-
-  <div className="w-full max-w-md mx-auto space-y-5">
-
-    {/* ORDER SUMMARY */}
-    <div className="rounded-2xl border border-gray-800 bg-[#111] p-4 sm:p-5">
-
-      <h2 className="text-lg font-bold text-white">
-        Order Summary
-      </h2>
-
-      <p className="text-xs text-gray-500 mt-1">
-        Review your order details
-      </p>
-
-      <div className="mt-5 space-y-4">
-
-        <div className="flex justify-between items-center gap-3 text-sm">
-          <span className="text-gray-400">
-            Subtotal
-          </span>
-
-          <span className="text-white font-medium">
-            ₹{subtotal.toLocaleString("en-IN")}
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center gap-3 text-sm">
-          <span className="text-gray-400">
-            Delivery Charges
-          </span>
-
-          <span className="text-white font-medium">
-            {delivery === 0 ? "₹0" : `₹${delivery}`}
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center gap-3 text-sm">
-          <span className="text-gray-400">
-            Discount
-          </span>
-
-          <span className="text-green-400 font-medium">
-            ₹0
-          </span>
-        </div>
-
-        <div className="border-t border-gray-800 pt-4 flex justify-between items-center gap-3">
-
-          <span className="text-white font-semibold text-sm sm:text-base">
-            Total Amount
-          </span>
-
-          <span className="text-lg sm:text-xl font-bold text-purple-400">
-            ₹{total.toLocaleString("en-IN")}
-          </span>
+          <Link
+            href="/Products"
+            className="
+              mt-8 inline-flex items-center gap-2
+              border border-[#3ABAE9]
+              bg-[#3ABAE9]
+              px-7 py-3.5
+              text-sm font-black
+              text-black
+              transition
+              hover:border-white
+              hover:bg-white
+            "
+          >
+            Explore Components
+            <span>→</span>
+          </Link>
 
         </div>
 
-      </div>
+      </section>
     </div>
+  );
+}
 
-    {/* PLACE ORDER FORM */}
-    <form
-      onSubmit={handleSubmit}
-      className="rounded-2xl border border-gray-800 bg-[#111] p-4 sm:p-5 space-y-4"
-    >
 
-      <div>
-        <h2 className="text-lg font-bold text-white">
-          Delivery Details
-        </h2>
+return (
+  <div className="min-h-screen w-full bg-black text-white">
 
-        <p className="text-xs text-gray-500 mt-1">
-          Enter your details to place your order
+    {/* ================================================= */}
+    {/* PAGE HEADER */}
+    {/* ================================================= */}
+
+    <section className="relative overflow-hidden border-b border-white/10 pt-20">
+
+      {/* Background glow */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#3ABAE9]/10 blur-[120px]" />
+
+      <div className="pointer-events-none absolute -right-40 top-10 h-80 w-80 rounded-full bg-[#3ABAE9]/10 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl px-5 py-12 lg:px-8">
+
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#3ABAE9]">
+          CYBERFLIX STORE
         </p>
+
+        <div className="mt-3 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+
+          <div>
+            <h1 className="text-4xl font-black tracking-tight sm:text-5xl">
+              Your Cart
+            </h1>
+
+            <p className="mt-3 text-sm text-gray-500">
+              Review your components and complete your build.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 border border-white/10 bg-white/[0.03] px-4 py-2.5">
+            <span className="h-2 w-2 rounded-full bg-[#3ABAE9] shadow-[0_0_10px_#3ABAE9]" />
+
+            <span className="text-xs text-gray-400">
+              {cart.length} {cart.length === 1 ? "item" : "items"}
+            </span>
+          </div>
+
+        </div>
+
       </div>
 
-      {/* NAME */}
-      <div>
-        <label className="text-sm text-gray-300">
-          Full Name
-        </label>
+    </section>
 
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          placeholder="Enter your full name"
-          required
-          className="mt-2 w-full min-w-0 rounded-lg border border-gray-800 bg-[#0a0a0a] px-3 sm:px-4 py-3 text-sm text-white outline-none placeholder:text-gray-600 focus:border-purple-500"
-        />
+
+    {/* ================================================= */}
+    {/* MAIN CONTENT */}
+    {/* ================================================= */}
+
+    <section className="relative mx-auto max-w-7xl px-5 py-10 lg:px-8">
+
+      <div className="grid items-start gap-8 lg:grid-cols-[1fr_390px]">
+
+
+        {/* ================================================= */}
+        {/* LEFT — CART ITEMS */}
+        {/* ================================================= */}
+
+        <div>
+
+          <div className="mb-5 flex items-center justify-between">
+
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
+                Components
+              </p>
+
+              <h2 className="mt-1 text-xl font-bold">
+                Selected Hardware
+              </h2>
+            </div>
+
+          </div>
+
+
+          <div className="space-y-4">
+
+            {cart?.map((e) => {
+
+              return (
+
+                <div
+                  key={e.id}
+                  className="
+                    group relative overflow-hidden
+                    border border-white/10
+                    bg-[#070707]
+                    p-4
+                    transition-all duration-300
+                    hover:border-[#3ABAE9]/40
+                    hover:shadow-[0_15px_40px_rgba(58,186,233,0.05)]
+                    sm:p-5
+                  "
+                >
+
+                  {/* Blue glow */}
+                  <div className="
+                    pointer-events-none
+                    absolute -right-16 -top-16
+                    h-32 w-32
+                    rounded-full
+                    bg-[#3ABAE9]/10
+                    blur-[60px]
+                    opacity-0
+                    transition
+                    group-hover:opacity-100
+                  " />
+
+
+                  <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center">
+
+
+                    {/* PRODUCT IMAGE */}
+
+                    <div className="
+                      flex h-28 w-full
+                      shrink-0
+                      items-center justify-center
+                      overflow-hidden
+                      border border-white/10
+                      bg-gradient-to-br from-[#0c0c0c] to-black
+                      sm:h-28 sm:w-28
+                    ">
+
+                      <img
+                        src={e.img}
+                        alt={e.name}
+                        className="
+                          h-full w-full
+                          object-contain
+                          p-2
+                          transition duration-500
+                          group-hover:scale-110
+                        "
+                      />
+
+                    </div>
+
+
+                    {/* PRODUCT DETAILS */}
+
+                    <div className="min-w-0 flex-1">
+
+                      <div className="flex flex-wrap items-center gap-2">
+
+                        <span className="border border-[#3ABAE9]/20 bg-[#3ABAE9]/5 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-[#3ABAE9]">
+                          {e.category}
+                        </span>
+
+                        <span className="text-[10px] text-gray-600">
+                          {e.brand}
+                        </span>
+
+                      </div>
+
+
+                      <h2 className="
+                        mt-2
+                        line-clamp-2
+                        text-sm font-bold
+                        leading-6
+                        text-white
+                        sm:text-base
+                      ">
+                        {e.name}
+                      </h2>
+
+
+                      {e.processor && (
+                        <p className="mt-1 text-xs text-gray-500">
+                          Processor:
+                          <span className="ml-1 text-gray-300">
+                            {e.processor}
+                          </span>
+                        </p>
+                      )}
+
+
+                      <p className="mt-3 text-lg font-black text-[#3ABAE9]">
+                        ₹{(e.price * e.qty).toLocaleString("en-IN")}
+                      </p>
+
+                    </div>
+
+
+                    {/* QUANTITY */}
+
+                    <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
+
+                      <span className="text-[10px] uppercase tracking-wider text-gray-600 sm:hidden">
+                        Quantity
+                      </span>
+
+
+                      <div className="
+                        flex
+                        overflow-hidden
+                        border border-[#3ABAE9]/25
+                        bg-[#3ABAE9]/5
+                      ">
+
+                        <button
+                          onClick={() => decqty(e.id, e.qty)}
+                          className="
+                            flex h-9 w-9
+                            items-center justify-center
+                            text-gray-400
+                            transition
+                            hover:bg-[#3ABAE9]
+                            hover:text-black
+                          "
+                        >
+                          −
+                        </button>
+
+
+                        <span className="
+                          flex h-9 w-10
+                          items-center justify-center
+                          border-x border-[#3ABAE9]/20
+                          text-sm font-bold
+                          text-[#3ABAE9]
+                        ">
+                          {e.qty}
+                        </span>
+
+
+                        <button
+                          onClick={() => incqty(e.id, e.qty)}
+                          className="
+                            flex h-9 w-9
+                            items-center justify-center
+                            text-gray-400
+                            transition
+                            hover:bg-[#3ABAE9]
+                            hover:text-black
+                          "
+                        >
+                          +
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              );
+
+            })}
+
+          </div>
+
+        </div>
+
+
+        {/* ================================================= */}
+        {/* RIGHT — ORDER SUMMARY */}
+        {/* ================================================= */}
+
+        <div className="lg:sticky lg:top-28">
+
+          <div className="space-y-5">
+
+
+            {/* ORDER SUMMARY */}
+
+            <div className="
+              border border-white/10
+              bg-[#070707]
+              p-5
+              sm:p-6
+            ">
+
+              <div className="border-b border-white/10 pb-5">
+
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
+                  Checkout
+                </p>
+
+                <h2 className="mt-2 text-xl font-black">
+                  Order Summary
+                </h2>
+
+                <p className="mt-1 text-xs text-gray-600">
+                  Review your order details
+                </p>
+
+              </div>
+
+
+              <div className="space-y-4 py-5">
+
+                {/* SUBTOTAL */}
+
+                <div className="flex items-center justify-between gap-4 text-sm">
+
+                  <span className="text-gray-500">
+                    Subtotal
+                  </span>
+
+                  <span className="font-medium text-white">
+                    ₹{subtotal.toLocaleString("en-IN")}
+                  </span>
+
+                </div>
+
+
+                {/* DELIVERY */}
+
+                <div className="flex items-center justify-between gap-4 text-sm">
+
+                  <span className="text-gray-500">
+                    Delivery Charges
+                  </span>
+
+                  <span className="font-medium text-white">
+                    {delivery === 0 ? "₹0" : `₹${delivery}`}
+                  </span>
+
+                </div>
+
+
+                {/* DISCOUNT */}
+
+                <div className="flex items-center justify-between gap-4 text-sm">
+
+                  <span className="text-gray-500">
+                    Discount
+                  </span>
+
+                  <span className="font-medium text-[#3ABAE9]">
+                    ₹0
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              {/* TOTAL */}
+
+              <div className="
+                border-t border-white/10
+                pt-5
+              ">
+
+                <div className="flex items-end justify-between gap-4">
+
+                  <div>
+
+                    <p className="text-xs text-gray-500">
+                      Total Amount
+                    </p>
+
+                    <p className="mt-1 text-2xl font-black text-white">
+                      ₹{total.toLocaleString("en-IN")}
+                    </p>
+
+                  </div>
+
+                  <span className="mb-1 text-[9px] font-bold uppercase tracking-wider text-[#3ABAE9]">
+                    INR
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* ================================================= */}
+            {/* DELIVERY FORM */}
+            {/* ================================================= */}
+
+            <form
+              onSubmit={handleSubmit}
+              className="
+                border border-white/10
+                bg-[#070707]
+                p-5
+                sm:p-6
+              "
+            >
+
+              <div className="border-b border-white/10 pb-5">
+
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
+                  Delivery
+                </p>
+
+                <h2 className="mt-2 text-xl font-black">
+                  Delivery Details
+                </h2>
+
+                <p className="mt-1 text-xs text-gray-600">
+                  Enter your details to place your order
+                </p>
+
+              </div>
+
+
+              <div className="space-y-4 pt-5">
+
+
+                {/* NAME */}
+
+                <div>
+
+                  <label className="text-xs font-medium text-gray-400">
+                    Full Name
+                  </label>
+
+                  <input
+                    type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="Enter your full name"
+                    required
+                    className="
+                      mt-2 w-full
+                      border border-white/10
+                      bg-black
+                      px-4 py-3
+                      text-sm text-white
+                      outline-none
+                      placeholder:text-gray-700
+                      transition
+                      focus:border-[#3ABAE9]/60
+                      focus:bg-[#3ABAE9]/[0.02]
+                    "
+                  />
+
+                </div>
+
+
+                {/* EMAIL */}
+
+                <div>
+
+                  <label className="text-xs font-medium text-gray-400">
+                    Email Address
+                  </label>
+
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email"
+                    required
+                    className="
+                      mt-2 w-full
+                      border border-white/10
+                      bg-black
+                      px-4 py-3
+                      text-sm text-white
+                      outline-none
+                      placeholder:text-gray-700
+                      transition
+                      focus:border-[#3ABAE9]/60
+                      focus:bg-[#3ABAE9]/[0.02]
+                    "
+                  />
+
+                </div>
+
+
+                {/* PHONE */}
+
+                <div>
+
+                  <label className="text-xs font-medium text-gray-400">
+                    Phone Number
+                  </label>
+
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="Enter your phone number"
+                    pattern="[0-9]{10}"
+                    maxLength={10}
+                    required
+                    className="
+                      mt-2 w-full
+                      border border-white/10
+                      bg-black
+                      px-4 py-3
+                      text-sm text-white
+                      outline-none
+                      placeholder:text-gray-700
+                      transition
+                      focus:border-[#3ABAE9]/60
+                      focus:bg-[#3ABAE9]/[0.02]
+                    "
+                  />
+
+                </div>
+
+
+                {/* ADDRESS */}
+
+                <div>
+
+                  <label className="text-xs font-medium text-gray-400">
+                    Delivery Address
+                  </label>
+
+                  <textarea
+                    name="location"
+                    value={form.location}
+                    onChange={handleChange}
+                    placeholder="House no., street, city, state, pincode"
+                    rows={3}
+                    required
+                    className="
+                      mt-2 w-full
+                      resize-none
+                      border border-white/10
+                      bg-black
+                      px-4 py-3
+                      text-sm text-white
+                      outline-none
+                      placeholder:text-gray-700
+                      transition
+                      focus:border-[#3ABAE9]/60
+                      focus:bg-[#3ABAE9]/[0.02]
+                    "
+                  />
+
+                </div>
+
+
+                {/* SUBMIT */}
+
+                <button
+                  type="submit"
+                  disabled={cart.length === 0}
+                  className="
+                    group
+                    flex w-full
+                    items-center justify-center gap-2
+                    border border-[#3ABAE9]
+                    bg-[#3ABAE9]
+                    px-4 py-3.5
+                    text-sm font-black
+                    text-black
+                    transition-all
+                    hover:border-white
+                    hover:bg-white
+                    disabled:cursor-not-allowed
+                    disabled:opacity-40
+                  "
+                >
+
+                  <span>
+                    Place Order
+                  </span>
+
+                  <span className="transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+
+                  <span className="ml-1 border-l border-black/20 pl-2">
+                    ₹{total.toLocaleString("en-IN")}
+                  </span>
+
+                </button>
+
+
+                {/* SECURITY */}
+
+                <div className="flex items-center justify-center gap-2 pt-1">
+
+                  <span className="text-[#3ABAE9]">
+                    🔒
+                  </span>
+
+                  <p className="text-center text-[10px] text-gray-600">
+                    Secure checkout · Your details stay protected
+                  </p>
+
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
       </div>
 
-      {/* EMAIL */}
-      <div>
-        <label className="text-sm text-gray-300">
-          Email Address
-        </label>
-
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="Enter your email"
-          required
-          className="mt-2 w-full min-w-0 rounded-lg border border-gray-800 bg-[#0a0a0a] px-3 sm:px-4 py-3 text-sm text-white outline-none placeholder:text-gray-600 focus:border-purple-500"
-        />
-      </div>
-
-      {/* PHONE */}
-      <div>
-        <label className="text-sm text-gray-300">
-          Phone Number
-        </label>
-
-        <input
-          type="tel"
-          name="phone"
-          value={form.phone}
-          onChange={handleChange}
-          placeholder="Enter your phone number"
-          pattern="[0-9]{10}"
-          maxLength={10}
-          required
-          className="mt-2 w-full min-w-0 rounded-lg border border-gray-800 bg-[#0a0a0a] px-3 sm:px-4 py-3 text-sm text-white outline-none placeholder:text-gray-600 focus:border-purple-500"
-        />
-      </div>
-
-      {/* LOCATION */}
-      <div>
-        <label className="text-sm text-gray-300">
-          Delivery Address
-        </label>
-
-        <textarea
-          name="location"
-          value={form.location}
-          onChange={handleChange}
-          placeholder="House no., street, city, state, pincode"
-          rows={3}
-          required
-          className="mt-2 w-full min-w-0 resize-none rounded-lg border border-gray-800 bg-[#0a0a0a] px-3 sm:px-4 py-3 text-sm text-white outline-none placeholder:text-gray-600 focus:border-purple-500"
-        />
-      </div>
-
-      {/* SUBMIT */}
-      <button
-        type="submit"
-        disabled={cart.length === 0}
-        className="w-full rounded-xl bg-purple-600 px-3 py-3.5 text-sm font-bold text-white transition hover:bg-purple-500 disabled:cursor-not-allowed disabled:opacity-40"
-      >
-        Place Order • ₹{total.toLocaleString("en-IN")}
-      </button>
-
-      <p className="text-center text-xs text-gray-500">
-        Secure checkout · Your details stay protected
-      </p>
-
-    </form>
+    </section>
 
   </div>
-</section>
-    </div>
+
   )
 }
 

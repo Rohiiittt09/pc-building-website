@@ -16,58 +16,69 @@ const Navbar = () => {
   }
   return (
     <div className=''>
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#08060d]/85 backdrop-blur-xl">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-xl">
+    <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
+
+      {/* LOGO SPACE */}
+      <Link href="/" className="flex h-14 w-64 items-center">
+        <img
+          src="/img/logo.jpeg"
+          alt="Cyberflix Systems LLP"
+          className="max-h-full max-w-full object-contain object-left"
+        />
+      </Link>
+
+      <nav className="hidden items-center gap-8 md:flex">
+        <Link
+          href="/"
+          className="text-sm font-medium text-white transition hover:text-[#3ABAE9]"
+        >
+          Home
+        </Link>
+
+        <Link
+          href="/Products"
+          className="text-sm font-medium text-gray-300 transition hover:text-[#3ABAE9]"
+        >
+          Components
+        </Link>
+
+        <a
+          href="#builder"
+          className="text-sm font-medium text-gray-300 transition hover:text-[#3ABAE9]"
+        >
+          PC Builder
+        </a>
+
+        <a
+          href="#components"
+          className="text-sm font-medium text-gray-300 transition hover:text-[#3ABAE9]"
+        >
+          Shop
+        </a>
+      </nav>
+
       
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600 shadow-lg shadow-purple-600/30">
-                <span className="text-lg font-black">C</span>
-              </div>
+      <div className="flex items-center gap-3">
       
-              <div>
-                <h1 className="text-lg font-bold tracking-wide">CYBERFLIX</h1>
-                <p className="text-[9px] uppercase tracking-[0.3em] text-purple-400">
-                  Systems LLP
-                </p>
-              </div>
-            </Link>
-      
-            <div className="hidden items-center gap-8 md:flex">
-              <Link href="/" className="text-sm text-gray-300 transition hover:text-white">
-                Home
-              </Link>
-      
-              <Link href="/Products" className="text-sm text-gray-300 transition hover:text-white">
-                Components
-              </Link>
-      
-              <Link href="/custom-pcs" className="text-sm text-gray-300 transition hover:text-white">
-                Custom PCs
-              </Link>
-      
-              <Link href="/pc-builder" className="text-sm text-gray-300 transition hover:text-white">
-                PC Builder
-              </Link>
-               <Link href="/contactus" className="text-sm text-gray-300 transition hover:text-white">
-                    Contact Us
-                   </Link>
-            </div>
-      
-            <div className="flex items-center gap-3">
-      
-              
+              <Link
+        href="/Products"
+        className="hidden rounded-lg border border-[#3ABAE9]/50 bg-[#3ABAE9]/10 px-5 py-2.5 text-sm font-bold text-[#3ABAE9] transition hover:bg-[#3ABAE9] hover:text-black sm:block"
+      >
+        Explore
+      </Link>
       
               <Link href="/Cart" className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-purple-500/50 hover:bg-purple-500/10">
                 🛒
-                <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-purple-600 px-1 text-[9px] font-bold">
+                <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#3ABAE9]/50 px-1 text-[9px] font-bold">
                   {cart.length}
                 </span>
               </Link>
       
                 {
-                  session?<Link href={"/account"} className="hidden rounded-xl bg-purple-600 px-5 py-2.5 text-sm font-semibold transition hover:bg-purple-500 sm:block">
+                  session?<Link href={"/account"} className="hidden rounded-xl border-[#3ABAE9]/50 bg-[#3ABAE9]/10 px-5 py-2.5 text-sm font-semibold  text-sm font-bold text-[#3ABAE9] transition hover:bg-[#3ABAE9] hover:text-black  sm:block">
                 Account
-              </Link>:<Link href={"/Login"} className="hidden rounded-xl bg-purple-600 px-5 py-2.5 text-sm font-semibold transition hover:bg-purple-500 sm:block">
+              </Link>:<Link href={"/Login"} className="hidden rounded-xl border-[#3ABAE9]/50 bg-[#3ABAE9]/10 px-5 py-2.5 text-sm font-semibold  text-sm font-bold text-[#3ABAE9] transition hover:bg-[#3ABAE9] hover:text-black  sm:block">
                 Login
               </Link>
                 }
@@ -77,8 +88,9 @@ const Navbar = () => {
               </button>
       
             </div>
-          </nav>
-        </header>
+
+    </div>
+  </header>
   <div className={hid?"w-screen fixed z-60  top-0 transition-all duration-700 ease-in-out  h-[70vh] bg-slate-900":"w-screen fixed transition-all duration-700 ease-in-out z-60 -top-[75vh] h-[70vh] bg-slate-900"}>
       <div className=' w-full  flex justify-end px-4 py-2'>
         <div className='absolute  text-4xl text-white  font-semibold z-70' onClick={()=>{hidden()}}>X</div>

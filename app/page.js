@@ -53,51 +53,75 @@ export default function Home() {
           }
         }, [])
   return (
-   <div className="bg-[#08060d] text-white">
+   <div className="min-h-screen bg-black text-white selection:bg-[#3ABAE9] selection:text-black">
 
+  {/* ================= NAVBAR ================= */}
+  
 
 
   <main>
-      <section className="w-screen h-screen ">
-        
-          <div className="w-screen h-screen fixed  top-0 left-0 " >
-            <img className="w-full h-full object-cover" src="img/bg.png" alt="" />
-          </div>
-          <div className="w-screen h-screen fixed bg-black/30 z-1 top-0 left-0 " >
-            
-          </div>
-          <div className="relative z-20 mx-auto grid min-h-[650px] max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8">
 
-        <div className="">
+    {/* ================= HERO ================= */}
+    <section className="relative min-h-screen overflow-hidden pt-20">
 
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-4 py-2">
-            <span className="h-2 w-2 rounded-full bg-purple-400"></span>
+      {/* Background */}
+      <div className="fixed inset-0 z-10 blur-[5px] h-screen w-screen">
+        <img
+          className="h-full w-full object-cover opacity-70"
+          src="img/bg.png"
+          alt=""
+        />
+      </div>
 
-            <span className="text-xs font-medium text-purple-300">
+      <div className="fixed inset-0 -z-10 bg-black/75" />
+
+      {/* Blue ambient glow */}
+      <div className="pointer-events-none absolute left-[-150px] top-1/3 h-96 w-96 rounded-full bg-[#3ABAE9]/10 blur-[130px]" />
+      <div className="pointer-events-none absolute right-[-150px] top-1/4 h-96 w-96 rounded-full bg-[#3ABAE9]/10 blur-[130px]" />
+
+      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8">
+
+        {/* LEFT */}
+        <div>
+
+          <div className="mb-6 inline-flex items-center gap-3 border border-[#3ABAE9]/30 bg-[#3ABAE9]/5 px-4 py-2">
+            <span className="h-2 w-2 rounded-full bg-[#3ABAE9] shadow-[0_0_12px_#3ABAE9]" />
+
+            <span className="text-xs font-bold tracking-[0.2em] text-[#3ABAE9]">
               PREMIUM PC COMPONENTS
             </span>
           </div>
 
-          <h2 className="max-w-3xl flex-col flex text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-5xl xl:text-7xl">
+          <h2 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl lg:text-6xl xl:text-8xl">
             Build Your
-            <span><span className="text-purple-500  pr-5">Perfect</span>Machine.</span>
-            
+            <span className="block">
+              <span className="text-[#3ABAE9]">
+                Perfect
+              </span>{" "}
+              Machine.
+            </span>
           </h2>
 
-          <p className="sm:mt-6 mt-2 text-[14px] text-base leading-7 text-gray-400 sm:text-lg">
+          <p className="mt-6 max-w-xl text-sm leading-7 text-gray-400 sm:text-lg">
             Discover premium PC components, build a compatible system,
             and create a setup designed around your performance needs.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
 
-            <Link href="/"
-              className="rounded-xl bg-purple-600 px-7 py-3.5 text-center text-sm font-bold transition hover:bg-purple-500 hover:shadow-lg hover:shadow-purple-600/20">
-              Build Your PC →
+            <Link
+              href="/"
+              className="group relative overflow-hidden border border-[#3ABAE9] bg-[#3ABAE9] px-7 py-3.5 text-center text-sm font-black text-black transition hover:shadow-[0_0_30px_rgba(58,186,233,0.3)]"
+            >
+              <span className="relative z-10">
+                Build Your PC →
+              </span>
             </Link>
 
-            <Link href="/Products"
-              className="rounded-xl border border-white/10 bg-white/5 px-7 py-3.5 text-center text-sm font-semibold text-gray-200 transition hover:border-purple-500/40 hover:bg-purple-500/10">
+            <Link
+              href="/Products"
+              className="border border-white/15 bg-white/[0.03] px-7 py-3.5 text-center text-sm font-semibold text-gray-200 transition hover:border-[#3ABAE9]/60 hover:bg-[#3ABAE9]/10 hover:text-[#3ABAE9]"
+            >
               Explore Components
             </Link>
 
@@ -106,18 +130,30 @@ export default function Home() {
           <div className="mt-12 flex flex-wrap gap-8 border-t border-white/10 pt-7">
 
             <div>
-              <p className="text-xl font-bold">500+</p>
-              <p className="mt-1 text-xs text-gray-500">Components</p>
+              <p className="text-xl font-bold text-white">
+                500+
+              </p>
+              <p className="mt-1 text-xs text-gray-500">
+                Components
+              </p>
             </div>
 
             <div>
-              <p className="text-xl font-bold">100%</p>
-              <p className="mt-1 text-xs text-gray-500">Compatibility Check</p>
+              <p className="text-xl font-bold text-white">
+                100%
+              </p>
+              <p className="mt-1 text-xs text-gray-500">
+                Compatibility Check
+              </p>
             </div>
 
             <div>
-              <p className="text-xl font-bold">Secure</p>
-              <p className="mt-1 text-xs text-gray-500">Checkout</p>
+              <p className="text-xl font-bold text-white">
+                Secure
+              </p>
+              <p className="mt-1 text-xs text-gray-500">
+                Checkout
+              </p>
             </div>
 
           </div>
@@ -125,63 +161,78 @@ export default function Home() {
         </div>
 
 
-       <div className="relative flex min-h-[430px] items-center justify-center">
+        {/* RIGHT FEATURED BUILD */}
+        <div className="relative flex min-h-[430px] items-center justify-center">
 
-          <div className="absolute h-72 w-72 rounded-full bg-purple-700/20 blur-[100px]">
-          </div>
+          <div className="absolute h-72 w-72 rounded-full bg-[#3ABAE9]/15 blur-[100px]" />
 
           <div className="relative w-full max-w-md">
 
-            <div className="rounded-3xl border border-purple-500/20 bg-white/[0.03] p-5 shadow-2xl shadow-purple-950/30 backdrop-blur">
+            <div className="border border-[#3ABAE9]/25 bg-black/60 p-5 shadow-[0_0_60px_rgba(58,186,233,0.08)] backdrop-blur-xl">
 
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
 
                 <div>
-                  <p className="text-xs text-gray-500">FEATURED BUILD</p>
-                  <h3 className="mt-1 font-semibold">Performance Series</h3>
+                  <p className="text-[10px] font-bold tracking-[0.2em] text-gray-500">
+                    FEATURED BUILD
+                  </p>
+
+                  <h3 className="mt-1 font-semibold">
+                    Performance Series
+                  </h3>
                 </div>
 
-                <span className="rounded-full bg-green-500/10 px-3 py-1 text-[10px] text-green-400">
+                <span className="border border-[#3ABAE9]/30 bg-[#3ABAE9]/10 px-3 py-1 text-[10px] font-bold tracking-wider text-[#3ABAE9]">
                   READY
                 </span>
 
               </div>
 
+
               <div className="my-8 flex h-64 items-center justify-center">
 
-                <div className="relative h-56 w-40 rounded-2xl border border-purple-400/30 bg-gradient-to-br from-purple-950 to-black shadow-2xl shadow-purple-700/30">
+                <div className="relative h-56 w-40 border border-[#3ABAE9]/40 bg-gradient-to-br from-[#092331] via-black to-black shadow-[0_0_50px_rgba(58,186,233,0.18)]">
 
-                  <div className="absolute left-4 right-4 top-5 h-24 rounded-xl border border-purple-500/20 bg-purple-500/10">
-                  </div>
+                  <div className="absolute left-4 right-4 top-5 h-24 border border-[#3ABAE9]/20 bg-[#3ABAE9]/5" />
 
-                  <div className="absolute bottom-8 left-6 h-4 w-4 rounded-full bg-purple-500 shadow-lg shadow-purple-500/80">
-                  </div>
+                  <div className="absolute bottom-8 left-6 h-4 w-4 rounded-full bg-[#3ABAE9] shadow-[0_0_18px_#3ABAE9]" />
 
-                  <div className="absolute bottom-8 right-6 h-4 w-4 rounded-full bg-purple-300 shadow-lg shadow-purple-300/70">
-                  </div>
+                  <div className="absolute bottom-8 right-6 h-4 w-4 rounded-full bg-white shadow-[0_0_18px_white]" />
 
-                  <div className="absolute bottom-20 left-1/2 h-20 w-1 -translate-x-1/2 bg-purple-500/30">
-                  </div>
+                  <div className="absolute bottom-20 left-1/2 h-20 w-px -translate-x-1/2 bg-[#3ABAE9]/40" />
 
                 </div>
 
               </div>
 
+
               <div className="grid grid-cols-3 gap-2">
 
-                <div className="rounded-xl bg-white/5 p-3">
-                  <p className="text-[10px] text-gray-500">CPU</p>
-                  <p className="mt-1 text-xs font-semibold">Ryzen 7</p>
+                <div className="border border-white/10 bg-white/[0.03] p-3">
+                  <p className="text-[10px] text-gray-500">
+                    CPU
+                  </p>
+                  <p className="mt-1 text-xs font-semibold">
+                    Ryzen 7
+                  </p>
                 </div>
 
-                <div className="rounded-xl bg-white/5 p-3">
-                  <p className="text-[10px] text-gray-500">GPU</p>
-                  <p className="mt-1 text-xs font-semibold">RTX Series</p>
+                <div className="border border-white/10 bg-white/[0.03] p-3">
+                  <p className="text-[10px] text-gray-500">
+                    GPU
+                  </p>
+                  <p className="mt-1 text-xs font-semibold">
+                    RTX Series
+                  </p>
                 </div>
 
-                <div className="rounded-xl bg-white/5 p-3">
-                  <p className="text-[10px] text-gray-500">RAM</p>
-                  <p className="mt-1 text-xs font-semibold">32GB</p>
+                <div className="border border-white/10 bg-white/[0.03] p-3">
+                  <p className="text-[10px] text-gray-500">
+                    RAM
+                  </p>
+                  <p className="mt-1 text-xs font-semibold">
+                    32GB
+                  </p>
                 </div>
 
               </div>
@@ -191,32 +242,36 @@ export default function Home() {
           </div>
 
         </div>
-        
 
       </div>
-        
-      </section>
 
-    
+    </section>
 
-    
-    <section id="components" className="border-t relative z-10 border-white/5 py-20">
+
+    {/* ================= COMPONENTS ================= */}
+    <section
+      id="components"
+      className="relative z-10 border-t border-white/10 py-20"
+    >
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
 
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-purple-400">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
               Shop Hardware
             </p>
 
-            <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-black sm:text-4xl">
               Find Your Components
             </h2>
           </div>
 
-          <Link href="/Products" className="text-sm font-semibold text-purple-400 hover:text-purple-300">
+          <Link
+            href="/Products"
+            className="text-sm font-semibold text-[#3ABAE9] transition hover:text-white"
+          >
             View all components →
           </Link>
 
@@ -225,154 +280,186 @@ export default function Home() {
 
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
 
-          
-          <a href="#" className="group rounded-2xl border border-white/10 bg-[#0d0a14]  p-5 transition hover:-translate-y-1 hover:border-purple-500 hover:bg-purple-500/20">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-xl">
-              ⚡
-            </div>
-            <h3 className="mt-5 font-semibold">CPU</h3>
-            <p className="mt-1 text-xs text-gray-500">Processors</p>
-          </a>
+          {[
+            ["⚡", "CPU", "Processors"],
+            ["◈", "GPU", "Graphics Cards"],
+            ["▦", "RAM", "Memory"],
+            ["▰", "Storage", "SSD / HDD"],
+            ["◉", "Monitors", "Displays"],
+          ].map(([icon, title, subtitle]) => (
 
-          <a href="#" className="group rounded-2xl border border-white/10 bg-[#0d0a14]  p-5 transition hover:-translate-y-1 hover:border-purple-500 hover:bg-purple-500/20">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-xl">
-              ◈
-            </div>
-            <h3 className="mt-5 font-semibold">GPU</h3>
-            <p className="mt-1 text-xs text-gray-500">Graphics Cards</p>
-          </a>
+            <a
+              href="#"
+              key={title}
+              className="group border border-white/10 bg-[#050505] p-5 transition hover:-translate-y-1 hover:border-[#3ABAE9]/60 hover:bg-[#3ABAE9]/5"
+            >
 
-          <a href="#" className="group rounded-2xl border border-white/10 bg-[#0d0a14]  p-5 transition hover:-translate-y-1 hover:border-purple-500 hover:bg-purple-500/20">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-xl">
-              ▦
-            </div>
-            <h3 className="mt-5 font-semibold">RAM</h3>
-            <p className="mt-1 text-xs text-gray-500">Memory</p>
-          </a>
+              <div className="flex h-12 w-12 items-center justify-center border border-[#3ABAE9]/20 bg-[#3ABAE9]/5 text-xl text-[#3ABAE9] transition group-hover:border-[#3ABAE9]/60 group-hover:bg-[#3ABAE9]/10">
+                {icon}
+              </div>
 
-          <a href="#" className="group rounded-2xl border border-white/10 bg-[#0d0a14]  p-5 transition hover:-translate-y-1 hover:border-purple-500 hover:bg-purple-500/20">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-xl">
-              ▰
-            </div>
-            <h3 className="mt-5 font-semibold">Storage</h3>
-            <p className="mt-1 text-xs text-gray-500">SSD / HDD</p>
-          </a>
+              <h3 className="mt-5 font-semibold">
+                {title}
+              </h3>
 
-          <a href="#" className="group rounded-2xl border border-white/10 bg-[#0d0a14]  p-5 transition hover:-translate-y-1 hover:border-purple-500 hover:bg-purple-500/20">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-xl">
-              ◉
-            </div>
-            <h3 className="mt-5 font-semibold">Monitors</h3>
-            <p className="mt-1 text-xs text-gray-500">Displays</p>
-          </a>
+              <p className="mt-1 text-xs text-gray-500">
+                {subtitle}
+              </p>
+
+            </a>
+
+          ))}
 
         </div>
 
       </div>
+
     </section>
 
 
-    
-    <section className="py-20">
+    {/* ================= POPULAR COMPONENTS ================= */}
+    <section className="relative z-10 border-t border-white/5 py-20">
 
-      <div className="mx-auto relative z-10 max-w-7xl px-5 lg:px-8">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-widest text-purple-400">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
             Featured
           </p>
 
-          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-black sm:text-4xl">
             Popular Components
           </h2>
         </div>
 
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {product?.filter((e, index) => [1, 7, 12, 16].includes(index)).map((e)=>{
-                return(
-                    <div key={e.id} className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0d0a14] transition hover:-translate-y-1 hover:border-purple-500/40">
 
-            <div className="flex overflow-hidden h-52 items-center justify-center bg-white/[0.025] text-4xl">
-              <img src={e.img} alt={e.category} />
-            </div>
+          {product?.filter((e, index) => [1, 7, 12, 16].includes(index)).map((e) => {
+            return (
+              <div
+                key={e.id}
+                className="group overflow-hidden border border-white/10 bg-[#050505] transition hover:-translate-y-1 hover:border-[#3ABAE9]/50 hover:shadow-[0_15px_40px_rgba(58,186,233,0.08)]"
+              >
 
-            <div className="p-5">
+                {/* IMAGE — UNCHANGED */}
+                <div className="flex h-52 items-center justify-center overflow-hidden bg-white/[0.025] text-4xl">
+                  <img
+                    src={e.img}
+                    alt={e.category}
+                    className="max-h-full max-w-full object-contain transition duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-              <p className="text-xs text-purple-400">{e.category} <span className=' text-white/60'>{e.brand}</span></p>
-              
+
+                <div className="p-5">
+
+                  <p className="text-xs text-[#3ABAE9]">
+                    {e.category}
+                    <span className="text-white/40">
+                      {" "}
+                      {e.brand}
+                    </span>
+                  </p>
+
+                  <h3 className="mt-2 font-semibold">
+                    {e.name}
+                  </h3>
 
 
-              <h3 className="mt-2 font-semibold">
-                {e.name}
-              </h3>
+                  <div className="mt-5 flex items-center justify-between">
 
-              <div className="mt-5 flex items-center justify-between">
+                    <p className="text-lg font-bold">
+                      ₹{e.price}
+                    </p>
 
-                <p className="text-lg font-bold">
-                  ₹{e.price}
-                </p>
-                {cart?.some((x) => x.id == e.id) ? (
-  <div className="flex items-center shrink-0 rounded-lg border border-gray-700 bg-[#181818] overflow-hidden">
 
-    <button onClick={(i)=>{decqty(e.id,cart.find((x)=>x.id==e.id).qty)}} className="w-8 h-8 flex items-center justify-center text-gray-300 hover:bg-purple-600 hover:text-white transition">
-      −
-    </button>
+                    {/* CART LOGIC — UNCHANGED */}
+                    {cart?.some((x) => x.id == e.id) ? (
 
-    <span className="w-8 h-8 flex items-center justify-center text-sm font-medium text-white border-x border-gray-700">
-      {cart.find((x) => x.id == e.id).qty}
-    </span>
+                      <div className="flex shrink-0 items-center overflow-hidden border border-white/10 bg-white/[0.03]">
 
-    <button onClick={(i)=>{incqty(e.id,cart.find((x)=>x.id==e.id).qty)}} className="w-8 h-8 flex items-center justify-center text-gray-300 hover:bg-purple-600 hover:text-white transition">
-      +
-    </button>
+                        <button
+                          onClick={(i) => {
+                            decqty(
+                              e.id,
+                              cart.find((x) => x.id == e.id).qty
+                            )
+                          }}
+                          className="flex h-8 w-8 items-center justify-center text-gray-300 transition hover:bg-[#3ABAE9] hover:text-black"
+                        >
+                          −
+                        </button>
 
-  </div>
-) : (
-  <button
-    onClick={()=>{addToCart(e)}}
-    className="rounded-lg cursor-pointer bg-purple-600 px-3 py-2 text-xs font-semibold transition hover:bg-purple-500"
-  >
-    Add
-  </button>
-)}
-                
-                
+                        <span className="flex h-8 w-8 items-center justify-center border-x border-white/10 text-sm font-medium text-white">
+                          {cart.find((x) => x.id == e.id).qty}
+                        </span>
+
+                        <button
+                          onClick={(i) => {
+                            incqty(
+                              e.id,
+                              cart.find((x) => x.id == e.id).qty
+                            )
+                          }}
+                          className="flex h-8 w-8 items-center justify-center text-gray-300 transition hover:bg-[#3ABAE9] hover:text-black"
+                        >
+                          +
+                        </button>
+
+                      </div>
+
+                    ) : (
+
+                      <button
+                        onClick={() => {
+                          addToCart(e)
+                        }}
+                        className="cursor-pointer border border-[#3ABAE9] bg-[#3ABAE9] px-3 py-2 text-xs font-bold text-black transition hover:bg-white hover:border-white"
+                      >
+                        Add
+                      </button>
+
+                    )}
+
+                  </div>
+
+                </div>
 
               </div>
-
-            </div>
-
-          </div>
-                )
-            })}
-     
+            )
+          })}
 
         </div>
 
       </div>
+
     </section>
 
 
-    {/* <!-- ================= PC BUILDER CTA ================= --> */}
-    <section id="builder" className="px-5 relative z-10 py-20 lg:px-8">
+    {/* ================= PC BUILDER ================= */}
+    <section
+      id="builder"
+      className="relative z-10 px-5 py-20 lg:px-8"
+    >
 
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-950/40 to-[#0d0a14]">
+      <div className="relative mx-auto max-w-7xl overflow-hidden border border-[#3ABAE9]/25 bg-gradient-to-br from-[#06151d] to-black">
 
-        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-purple-600/20 blur-[100px]">
-        </div>
+        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#3ABAE9]/10 blur-[100px]" />
 
         <div className="relative grid items-center gap-10 p-8 sm:p-12 lg:grid-cols-2 lg:p-16">
 
           <div>
 
-            <p className="text-sm font-semibold uppercase tracking-widest text-purple-400">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
               PC Builder
             </p>
 
             <h2 className="mt-3 text-4xl font-black leading-tight sm:text-5xl">
-              Don't know which parts
-              <span className="text-purple-500">work together?</span>
+              Don't know which parts{" "}
+              <span className="text-[#3ABAE9]">
+                work together?
+              </span>
             </h2>
 
             <p className="mt-5 max-w-xl leading-7 text-gray-400">
@@ -381,58 +468,77 @@ export default function Home() {
               a system that fits your needs.
             </p>
 
-            <a href="#"
-              className="mt-8 inline-flex rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-bold transition hover:bg-purple-500">
+            <a
+              href="#"
+              className="mt-8 inline-flex border border-[#3ABAE9] bg-[#3ABAE9] px-7 py-3.5 text-sm font-black text-black transition hover:bg-white hover:border-white"
+            >
               Start Building →
             </a>
 
           </div>
 
 
-          <div className="rounded-2xl border border-white/10 bg-black/20 p-5 backdrop-blur">
+          {/* BUILD CARD */}
+          <div className="border border-white/10 bg-black/60 p-5 backdrop-blur">
 
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
 
               <div>
-                <p className="text-xs text-gray-500">YOUR BUILD</p>
-                <p className="mt-1 font-semibold">Gaming PC</p>
+                <p className="text-[10px] font-bold tracking-[0.2em] text-gray-500">
+                  YOUR BUILD
+                </p>
+
+                <p className="mt-1 font-semibold">
+                  Gaming PC
+                </p>
               </div>
 
-              <p className="font-bold text-purple-400">₹78,499</p>
+              <p className="font-bold text-[#3ABAE9]">
+                ₹78,499
+              </p>
 
             </div>
+
 
             <div className="space-y-3 py-5">
 
-              <div className="flex items-center justify-between rounded-xl bg-white/5 p-3">
-                <span className="text-sm text-gray-300">CPU</span>
-                <span className="text-xs text-gray-500">Selected ✓</span>
-              </div>
+              {[
+                ["CPU", "Selected ✓"],
+                ["GPU", "Selected ✓"],
+                ["RAM", "32GB DDR5"],
+                ["Storage", "1TB NVMe"],
+              ].map(([name, value]) => (
 
-              <div className="flex items-center justify-between rounded-xl bg-white/5 p-3">
-                <span className="text-sm text-gray-300">GPU</span>
-                <span className="text-xs text-gray-500">Selected ✓</span>
-              </div>
+                <div
+                  key={name}
+                  className="flex items-center justify-between border border-white/5 bg-white/[0.03] p-3"
+                >
+                  <span className="text-sm text-gray-300">
+                    {name}
+                  </span>
 
-              <div className="flex items-center justify-between rounded-xl bg-white/5 p-3">
-                <span className="text-sm text-gray-300">RAM</span>
-                <span className="text-xs text-gray-500">32GB DDR5</span>
-              </div>
+                  <span className="text-xs text-gray-500">
+                    {value}
+                  </span>
+                </div>
 
-              <div className="flex items-center justify-between rounded-xl bg-white/5 p-3">
-                <span className="text-sm text-gray-300">Storage</span>
-                <span className="text-xs text-gray-500">1TB NVMe</span>
-              </div>
+              ))}
 
             </div>
 
-            <div className="rounded-xl border border-green-500/20 bg-green-500/5 p-4">
+
+            <div className="border border-[#3ABAE9]/20 bg-[#3ABAE9]/5 p-4">
 
               <div className="flex items-center gap-2">
-                <span className="text-green-400">✓</span>
-                <span className="text-sm font-semibold text-green-400">
+
+                <span className="text-[#3ABAE9]">
+                  ✓
+                </span>
+
+                <span className="text-sm font-semibold text-[#3ABAE9]">
                   All selected parts are compatible
                 </span>
+
               </div>
 
             </div>
@@ -446,18 +552,18 @@ export default function Home() {
     </section>
 
 
-    {/* <!-- ================= WHY CYBERFLIX ================= --> */}
-    <section className="border-t relative z-10 border-white/5 py-20">
+    {/* ================= WHY CYBERFLIX ================= */}
+    <section className="relative z-10 border-t border-white/5 py-20">
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
 
         <div className="max-w-2xl">
 
-          <p className="text-sm font-semibold uppercase tracking-widest text-purple-400">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
             Why Cyberflix
           </p>
 
-          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-black sm:text-4xl">
             Built for people who care about their setup.
           </h2>
 
@@ -466,96 +572,139 @@ export default function Home() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-            <div className="text-2xl">✓</div>
-            <h3 className="mt-5 font-semibold">Compatibility First</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-500">
-              Build with confidence using compatibility checks.
-            </p>
-          </div>
+          {[
+            ["✓", "Compatibility First", "Build with confidence using compatibility checks."],
+            ["⚡", "Performance Focused", "Components selected for real-world performance."],
+            ["🔒", "Secure Shopping", "Simple and secure shopping experience."],
+            ["🛠", "Build Your Way", "Create a configuration around your requirements."],
+          ].map(([icon, title, description]) => (
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-            <div className="text-2xl">⚡</div>
-            <h3 className="mt-5 font-semibold">Performance Focused</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-500">
-              Components selected for real-world performance.
-            </p>
-          </div>
+            <div
+              key={title}
+              className="group border border-white/10 bg-white/[0.02] p-6 transition hover:border-[#3ABAE9]/40 hover:bg-[#3ABAE9]/5"
+            >
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-            <div className="text-2xl">🔒</div>
-            <h3 className="mt-5 font-semibold">Secure Shopping</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-500">
-              Simple and secure shopping experience.
-            </p>
-          </div>
+              <div className="text-2xl text-[#3ABAE9]">
+                {icon}
+              </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-            <div className="text-2xl">🛠</div>
-            <h3 className="mt-5 font-semibold">Build Your Way</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-500">
-              Create a configuration around your requirements.
-            </p>
-          </div>
+              <h3 className="mt-5 font-semibold">
+                {title}
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-gray-500">
+                {description}
+              </p>
+
+            </div>
+
+          ))}
 
         </div>
 
       </div>
+
     </section>
 
   </main>
 
 
-  {/* <!-- ================= FOOTER ================= --> */}
-  <footer className="border-t relative z-10 border-white/10 bg-[#050409]">
+  {/* ================= FOOTER ================= */}
+  <footer className="relative z-10 border-t border-white/10 bg-black">
 
     <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
 
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
+        {/* LOGO */}
         <div>
-          <h2 className="text-lg font-bold">CYBERFLIX</h2>
+
+          <div className="flex h-12 w-56 items-center">
+            <img
+              src="/img/logo.png"
+              alt="Cyberflix Systems LLP"
+              className="max-h-full max-w-full object-contain object-left"
+            />
+          </div>
 
           <p className="mt-4 max-w-xs text-sm leading-6 text-gray-500">
             Premium PC components and custom PC building
             for creators, gamers and professionals.
           </p>
+
         </div>
 
+
         <div>
-          <h3 className="font-semibold">Shop</h3>
+
+          <h3 className="font-semibold">
+            Shop
+          </h3>
 
           <div className="mt-4 space-y-3 text-sm text-gray-500">
-            <a href="#" className="block hover:text-white">CPU</a>
-            <a href="#" className="block hover:text-white">GPU</a>
-            <a href="#" className="block hover:text-white">RAM</a>
-            <a href="#" className="block hover:text-white">Storage</a>
+
+            {["CPU", "GPU", "RAM", "Storage"].map((item) => (
+              <a
+                href="#"
+                key={item}
+                className="block transition hover:text-[#3ABAE9]"
+              >
+                {item}
+              </a>
+            ))}
+
           </div>
+
         </div>
 
+
         <div>
-          <h3 className="font-semibold">Explore</h3>
+
+          <h3 className="font-semibold">
+            Explore
+          </h3>
 
           <div className="mt-4 space-y-3 text-sm text-gray-500">
-            <a href="#" className="block hover:text-white">PC Builder</a>
-            <a href="#" className="block hover:text-white">Custom PCs</a>
-            <a href="#" className="block hover:text-white">About Us</a>
-            <a href="#" className="block hover:text-white">Contact</a>
+
+            {["PC Builder", "Custom PCs", "About Us", "Contact"].map((item) => (
+              <a
+                href="#"
+                key={item}
+                className="block transition hover:text-[#3ABAE9]"
+              >
+                {item}
+              </a>
+            ))}
+
           </div>
+
         </div>
 
+
         <div>
-          <h3 className="font-semibold">Support</h3>
+
+          <h3 className="font-semibold">
+            Support
+          </h3>
 
           <div className="mt-4 space-y-3 text-sm text-gray-500">
-            <a href="#" className="block hover:text-white">Shipping</a>
-            <a href="#" className="block hover:text-white">Returns</a>
-            <a href="#" className="block hover:text-white">Privacy</a>
-            <a href="#" className="block hover:text-white">Terms</a>
+
+            {["Shipping", "Returns", "Privacy", "Terms"].map((item) => (
+              <a
+                href="#"
+                key={item}
+                className="block transition hover:text-[#3ABAE9]"
+              >
+                {item}
+              </a>
+            ))}
+
           </div>
+
         </div>
 
       </div>
+
 
       <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-gray-600">
         © 2026 Cyberflix Systems LLP. All rights reserved.
