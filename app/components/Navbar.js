@@ -43,19 +43,19 @@ const Navbar = () => {
           Components
         </Link>
 
-        <a
-          href="#builder"
+        <Link
+          href="/Pc-builder"
           className="text-sm font-medium text-gray-300 transition hover:text-[#3ABAE9]"
         >
           PC Builder
-        </a>
+        </Link>
 
-        <a
-          href="#components"
+        <Link
+          href="/contactus"
           className="text-sm font-medium text-gray-300 transition hover:text-[#3ABAE9]"
         >
-          Shop
-        </a>
+          Contact
+        </Link>
       </nav>
 
       
@@ -68,7 +68,7 @@ const Navbar = () => {
         Explore
       </Link>
       
-              <Link href="/Cart" className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-purple-500/50 hover:bg-purple-500/10">
+              <Link href="/Cart" className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-[#3ABAE9] hover:bg-purple-500/10">
                 🛒
                 <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#3ABAE9]/50 px-1 text-[9px] font-bold">
                   {cart.length}
@@ -91,31 +91,29 @@ const Navbar = () => {
 
     </div>
   </header>
-  <div className={hid?"w-screen fixed z-60  top-0 transition-all duration-700 ease-in-out  h-[70vh] bg-slate-900":"w-screen fixed transition-all duration-700 ease-in-out z-60 -top-[75vh] h-[70vh] bg-slate-900"}>
+  <div className={hid?"w-screen fixed z-60  top-0 transition-all duration-700 ease-in-out  h-[70vh] bg-black/85":"w-screen fixed transition-all duration-700 ease-in-out z-60 -top-[75vh] h-[70vh] bg-black/85"}>
       <div className=' w-full  flex justify-end px-4 py-2'>
         <div className='absolute  text-4xl text-white  font-semibold z-70' onClick={()=>{hidden()}}>X</div>
       </div>
       <div className=' flex h-[60vh] mt-10  px-3 py-2  flex-col justify-between '>
-        <Link href={"/"} className="text-3xl  font-medium text-white hover:text-orange-600 transition">
+        <Link href={"/"} className="text-3xl  font-medium text-white transition">
                     Home
                   </Link>
         
-                  <Link href={"/Products"} className="text-3xl font-medium text-white hover:text-orange-600 transition">
+                  <Link href={"/Products"} className="text-3xl font-medium text-white transition">
                     Components
                   </Link>
         
-                  <Link href={"/"} className="text-3xl font-medium text-white hover:text-orange-600 transition">
-                    Custom PCs
+                  <Link href={"/Pc-builder"} className="text-3xl font-medium text-white transition">
+                    PC Builder
                   </Link>
         
-                  <Link href={"/"}className="text-3xl font-medium text-white hover:text-orange-600 transition">
-                    Buil PC
-                  </Link>
+                  
         
-                  <Link href={"/contactus"} className="text-3xl font-medium text-white hover:text-orange-600 transition">
-                    Contact Us
+                  <Link href={"/contactus"} className="text-3xl font-medium text-white transition">
+                    Contact
                   </Link>
-                  <Link href={"/Login"} className="text-3xl font-medium text-white hover:text-orange-600 transition">
+                  <Link href={"/Login"} className="text-3xl font-medium text-white transition">
                     Login/SignIN
                   </Link>
       </div>

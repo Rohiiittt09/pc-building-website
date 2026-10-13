@@ -4,6 +4,7 @@ import "./globals.css";
 import CartContextProvider from "@/app/components/CartContextProvider"
 import SessionWrapper from "@/app/components/SessionWrapper"
 import Navbar from "@/app/components/Navbar"
+import Footer from "@/app/components/Footer"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <CartContextProvider>
         <Navbar/>
         {children}
+        <Footer/>
         </CartContextProvider>
         </SessionWrapper>
       </body>

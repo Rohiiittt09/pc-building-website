@@ -4,8 +4,24 @@ import Link from 'next/link'
 import React, { useContext, useEffect, useState } from 'react'
 import {CartContext} from "@/app/components/CartContextProvider"
 import { signIn, useSession } from "next-auth/react";
-
+import {blog} from "@/app/components/Blog"
 export default function Home() {
+  const [statuss, setStatuss] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    
+    setStatuss(
+      "The form UI is ready. Connect an API to send your message."
+    );
+  }
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "General Feedback",
+    message: "",
+  });
+  
   const { data: session, status } = useSession()
   const [product, setproduct] = useState()
    const {addToCart,cart,setCart}=useContext(CartContext)
@@ -110,7 +126,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
 
             <Link
-              href="/"
+              href="/Pc-builder"
               className="group relative overflow-hidden border border-[#3ABAE9] bg-[#3ABAE9] px-7 py-3.5 text-center text-sm font-black text-black transition hover:shadow-[0_0_30px_rgba(58,186,233,0.3)]"
             >
               <span className="relative z-10">
@@ -248,7 +264,6 @@ export default function Home() {
     </section>
 
 
-    {/* ================= COMPONENTS ================= */}
     <section
       id="components"
       className="relative z-10 border-t border-white/10 py-20"
@@ -317,7 +332,6 @@ export default function Home() {
     </section>
 
 
-    {/* ================= POPULAR COMPONENTS ================= */}
     <section className="relative z-10 border-t border-white/5 py-20">
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -437,7 +451,6 @@ export default function Home() {
     </section>
 
 
-    {/* ================= PC BUILDER ================= */}
     <section
       id="builder"
       className="relative z-10 px-5 py-20 lg:px-8"
@@ -550,9 +563,507 @@ export default function Home() {
       </div>
 
     </section>
+    
+<section className="relative z-10 overflow-hidden border-t border-white/5 bg-[#05080B] py-20 sm:py-24">
 
+  <div className="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full bg-[#3ABAE9]/[0.07] blur-[100px]" />
 
-    {/* ================= WHY CYBERFLIX ================= */}
+  <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+
+    {/* Section Heading */}
+    <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+
+      <div className="max-w-2xl">
+
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
+          Knowledge Center
+        </p>
+
+        <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
+          Insights for Your{" "}
+          <span className="text-[#3ABAE9]">Next Build.</span>
+        </h2>
+
+        <p className="mt-4 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">
+          Explore PC building guides, hardware comparisons, and expert
+          insights to make smarter decisions for your setup.
+        </p>
+
+      </div>
+
+      <a
+        href="/blog"
+        className="inline-flex w-fit items-center gap-2 rounded-lg border border-[#3ABAE9]/40 px-5 py-3 text-sm font-semibold text-[#3ABAE9] transition duration-300 hover:bg-[#3ABAE9] hover:text-[#05080B]"
+      >
+        View All Articles
+        <span>↗</span>
+      </a>
+
+    </div>
+
+    {/* Blog Cards */}
+    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      {[
+        {
+          category: "PC BUILDING",
+          title: "How to Build Your First Gaming PC",
+          description:
+            "Learn about essential PC components, compatibility, and how to plan a build that suits your needs.",
+          image:
+            "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=85",
+          time: "8 min read",
+          link: "/blog/how-to-build-your-first-gaming-pc",
+        },
+        {
+          category: "BUYING GUIDE",
+          title: "Choosing the Right Graphics Card",
+          description:
+            "Understand GPU performance, memory, and the key factors to consider before your next upgrade.",
+          image:
+            "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=900&q=85",
+          time: "6 min read",
+          link: "/blog/graphics-card-buying-guide",
+        },
+        {
+          category: "HARDWARE KNOWLEDGE",
+          title: "CPU vs GPU: Understanding the Difference",
+          description:
+            "Discover how processors and graphics cards work together to power gaming and creative workloads.",
+          image:
+            "https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=900&q=85",
+          time: "5 min read",
+          link: "/blog/cpu-vs-gpu",
+        },
+      ].map((blog) => (
+
+        <article
+          key={blog.title}
+          className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0A1117] transition duration-300 hover:-translate-y-1 hover:border-[#3ABAE9]/40 hover:shadow-[0_15px_45px_rgba(58,186,233,0.07)]"
+        >
+
+          {/* Image */}
+          <a
+            href={blog.link}
+            aria-label={`Read ${blog.title}`}
+            className="relative block h-52 overflow-hidden bg-[#101820] sm:h-56"
+          >
+
+            <img
+              src={blog.image}
+              alt={blog.title}
+              loading="lazy"
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-[#05080B]/80 via-transparent to-transparent" />
+
+            <span className="absolute bottom-4 left-4 rounded-md border border-[#3ABAE9]/30 bg-[#05080B]/80 px-3 py-1.5 text-[10px] font-bold tracking-widest text-[#3ABAE9] backdrop-blur-md">
+              {blog.category}
+            </span>
+
+          </a>
+
+          {/* Content */}
+          <div className="flex flex-1 flex-col p-5 sm:p-6">
+
+            <p className="text-xs text-gray-500">
+              CYBERFLIX EDITORIAL
+              <span className="mx-2 text-[#3ABAE9]">•</span>
+              {blog.time}
+            </p>
+
+            <h3 className="mt-4 text-xl font-bold leading-snug text-white transition group-hover:text-[#3ABAE9]">
+              {blog.title}
+            </h3>
+
+            <p className="mt-3 flex-1 text-sm leading-6 text-gray-400">
+              {blog.description}
+            </p>
+
+            <a
+              href={blog.link}
+              className="mt-6 flex items-center justify-between border-t border-white/[0.08] pt-5 text-sm font-semibold text-white transition hover:text-[#3ABAE9]"
+            >
+              Read Article
+
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#3ABAE9]/30 text-[#3ABAE9] transition group-hover:bg-[#3ABAE9] group-hover:text-[#05080B]">
+                ↗
+              </span>
+            </a>
+
+          </div>
+
+        </article>
+
+      ))}
+
+    </div>
+
+    {/* Bottom CTA */}
+    <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-[#3ABAE9]/20 bg-gradient-to-r from-[#0A1117] to-[#0C1920] p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+
+      <div>
+        <h3 className="text-lg font-bold text-white sm:text-xl">
+          Ready to upgrade your knowledge?
+        </h3>
+
+        <p className="mt-2 text-sm leading-6 text-gray-400">
+          Find useful guides for your next PC build or hardware upgrade.
+        </p>
+      </div>
+
+      <a
+        href="/blog"
+        className="inline-flex w-fit shrink-0 items-center gap-2 rounded-lg bg-[#3ABAE9] px-5 py-3 text-sm font-bold text-[#05080B] transition hover:bg-white"
+      >
+        Explore Tech Guides
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section
+  id="about"
+  className="relative z-10 overflow-hidden border-t border-white/5 bg-[#05080B] py-20 sm:py-24"
+>
+  <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#3ABAE9]/[0.07] blur-[110px]" />
+
+  <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+    <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+      {/* Left: Image */}
+      <div className="relative">
+        <div className="absolute -inset-3 rounded-3xl border border-[#3ABAE9]/10" />
+
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0A1117]">
+          <img
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1200&q=85"
+            alt="Custom PC hardware and computer building setup"
+            loading="lazy"
+            className="h-[320px] w-full object-cover sm:h-[420px]"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-[#05080B]/90 via-transparent to-transparent" />
+
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
+              CYBERFLIX Systems LLP
+            </p>
+
+            <h3 className="mt-2 max-w-md text-2xl font-black leading-tight text-white sm:text-3xl">
+              Technology built around your needs.
+            </h3>
+          </div>
+        </div>
+
+        {/* Decorative badge */}
+        <div className="absolute -right-2 top-5 rounded-xl border border-[#3ABAE9]/30 bg-[#0A1117]/95 px-4 py-3 shadow-xl sm:-right-5 sm:top-8">
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-[#3ABAE9]" />
+            <span className="text-xs font-semibold text-white">
+              PC Hardware & Custom Builds
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Right: About Content */}
+      <div>
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
+          About Cyberflix
+        </p>
+
+        <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+          More Than Just
+          <span className="block text-[#3ABAE9]">
+            PC Components.
+          </span>
+        </h2>
+
+        <p className="mt-6 text-sm leading-7 text-gray-400 sm:text-base">
+          At CYBERFLIX Systems LLP, we focus on PC hardware, component
+          discovery, and custom PC configurations. Our goal is to help
+          users explore their options and make informed decisions for
+          their computing needs.
+        </p>
+
+        <p className="mt-4 text-sm leading-7 text-gray-400 sm:text-base">
+          Whether you are planning a gaming setup, upgrading your
+          existing system, or exploring hardware for creative work,
+          discover components and build possibilities in one place.
+        </p>
+
+        {/* Features */}
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+
+          {[
+            {
+              icon: "◈",
+              title: "Component Discovery",
+              description:
+                "Explore PC hardware and compare your options.",
+            },
+            {
+              icon: "⌘",
+              title: "Custom Configurations",
+              description:
+                "Plan a setup around your requirements.",
+            },
+            {
+              icon: "↗",
+              title: "Performance Focus",
+              description:
+                "Understand components for different workloads.",
+            },
+            {
+              icon: "◎",
+              title: "Built Around You",
+              description:
+                "Make informed choices for your next PC build.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="group flex gap-4 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 transition duration-300 hover:border-[#3ABAE9]/40 hover:bg-[#3ABAE9]/[0.04]"
+            >
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#3ABAE9]/20 bg-[#3ABAE9]/10 text-xl text-[#3ABAE9] transition group-hover:bg-[#3ABAE9] group-hover:text-[#05080B]">
+                {item.icon}
+              </div>
+
+              <div>
+                <h3 className="text-sm font-bold text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-1 text-xs leading-5 text-gray-500">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/about"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#3ABAE9] px-6 py-3 text-sm font-bold text-[#05080B] transition hover:bg-white"
+          >
+            Discover Our Story
+            <span>→</span>
+          </a>
+
+          <a
+            href="/Products"
+            className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#3ABAE9]/50 hover:text-[#3ABAE9]"
+          >
+            Explore Components
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section
+      id="contact"
+      className="relative z-10 overflow-hidden border-t border-white/5 bg-[#05080B] py-16 sm:py-20"
+    >
+      <div className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-[#3ABAE9]/[0.07] blur-[100px]" />
+
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
+
+          {/* Left: Contact intro */}
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#3ABAE9]">
+              Get In Touch
+            </p>
+
+            <h2 className="mt-3 text-3xl font-black leading-tight text-white sm:text-4xl">
+              Your Thoughts.
+              <span className="block text-[#3ABAE9]">
+                Our Next Step.
+              </span>
+            </h2>
+
+            <p className="mt-4 max-w-md text-sm leading-7 text-gray-400 sm:text-base">
+              Have a suggestion, question, or idea for CYBERFLIX?
+              We would love to hear what you think. Share your feedback
+              and help us make your PC building experience better.
+            </p>
+
+            <div className="mt-7 flex items-start gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#3ABAE9]/20 bg-[#3ABAE9]/10 text-xl text-[#3ABAE9]">
+                ✉
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-white">
+                  Questions or suggestions?
+                </h3>
+                <p className="mt-1 text-sm leading-6 text-gray-500">
+                  Send us a message using the form. We welcome your
+                  feedback and ideas.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-7 flex flex-wrap gap-2">
+              {["Feedback", "Suggestions", "PC Building", "Support"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-xs text-gray-400"
+                  >
+                    {item}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Right: Contact form */}
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-2xl border border-white/10 bg-[#0A1117] p-5 shadow-2xl sm:p-7"
+          >
+            <div className="mb-6">
+              <h3 className="text-xl font-bold text-white">
+                Send Us a Message
+              </h3>
+              <p className="mt-2 text-sm text-gray-500">
+                Tell us what is on your mind.
+              </p>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="contact-name"
+                  className="mb-2 block text-sm font-medium text-gray-300"
+                >
+                  Your Name
+                </label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  autoComplete="name"
+                  placeholder="Enter your name"
+                  required
+                  maxLength={100}
+                  value={form.name}
+                  onChange={(e) =>
+                    setForm({ ...form, name: e.target.value })
+                  }
+                  className="w-full rounded-lg border border-white/10 bg-[#05080B] px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-[#3ABAE9]/60 focus:ring-2 focus:ring-[#3ABAE9]/10"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="contact-email"
+                  className="mb-2 block text-sm font-medium text-gray-300"
+                >
+                  Email Address
+                </label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="you@example.com"
+                  required
+                  maxLength={254}
+                  value={form.email}
+                  onChange={(e) =>
+                    setForm({ ...form, email: e.target.value })
+                  }
+                  className="w-full rounded-lg border border-white/10 bg-[#05080B] px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-[#3ABAE9]/60 focus:ring-2 focus:ring-[#3ABAE9]/10"
+                />
+              </div>
+            </div>
+
+            <div className="mt-5">
+              <label
+                htmlFor="contact-subject"
+                className="mb-2 block text-sm font-medium text-gray-300"
+              >
+                What would you like to discuss?
+              </label>
+              <select
+                id="contact-subject"
+                value={form.subject}
+                onChange={(e) =>
+                  setForm({ ...form, subject: e.target.value })
+                }
+                className="w-full rounded-lg border border-white/10 bg-[#05080B] px-4 py-3 text-sm text-white outline-none transition focus:border-[#3ABAE9]/60"
+              >
+                <option>General Feedback</option>
+                <option>Suggestion or Idea</option>
+                <option>PC Building Help</option>
+                <option>Product Enquiry</option>
+                <option>Technical Support</option>
+                <option>Business Enquiry</option>
+              </select>
+            </div>
+
+            <div className="mt-5">
+              <label
+                htmlFor="contact-message"
+                className="mb-2 block text-sm font-medium text-gray-300"
+              >
+                Your Message
+              </label>
+              <textarea
+                id="contact-message"
+                rows={4}
+                placeholder="Share your thoughts, feedback, or questions..."
+                required
+                minLength={5}
+                maxLength={3000}
+                value={form.message}
+                onChange={(e) =>
+                  setForm({ ...form, message: e.target.value })
+                }
+                className="w-full resize-y rounded-lg border border-white/10 bg-[#05080B] px-4 py-3 text-sm leading-6 text-white outline-none transition placeholder:text-gray-600 focus:border-[#3ABAE9]/60 focus:ring-2 focus:ring-[#3ABAE9]/10"
+              />
+              <p className="mt-2 text-right text-xs text-gray-600">
+                {form.message.length}/3000 characters
+              </p>
+            </div>
+
+            <button
+              type="submit"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#3ABAE9] px-5 py-3.5 text-sm font-bold text-[#05080B] transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#3ABAE9] focus:ring-offset-2 focus:ring-offset-[#0A1117]"
+            >
+              Send Message
+              <span>↗</span>
+            </button>
+
+            {status && (
+              <p
+                role="status"
+                className="mt-4 rounded-lg border border-[#3ABAE9]/20 bg-[#3ABAE9]/5 p-3 text-sm leading-6 text-[#3ABAE9]"
+              >
+                {status}
+              </p>
+            )}
+
+            <p className="mt-4 text-center text-xs leading-5 text-gray-600">
+              Your information should be handled responsibly and used
+              to respond to your enquiry.
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </section>
     <section className="relative z-10 border-t border-white/5 py-20">
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -609,110 +1120,8 @@ export default function Home() {
   </main>
 
 
-  {/* ================= FOOTER ================= */}
-  <footer className="relative z-10 border-t border-white/10 bg-black">
-
-    <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
-
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-
-        {/* LOGO */}
-        <div>
-
-          <div className="flex h-12 w-56 items-center">
-            <img
-              src="/img/logo.png"
-              alt="Cyberflix Systems LLP"
-              className="max-h-full max-w-full object-contain object-left"
-            />
-          </div>
-
-          <p className="mt-4 max-w-xs text-sm leading-6 text-gray-500">
-            Premium PC components and custom PC building
-            for creators, gamers and professionals.
-          </p>
-
-        </div>
-
-
-        <div>
-
-          <h3 className="font-semibold">
-            Shop
-          </h3>
-
-          <div className="mt-4 space-y-3 text-sm text-gray-500">
-
-            {["CPU", "GPU", "RAM", "Storage"].map((item) => (
-              <a
-                href="#"
-                key={item}
-                className="block transition hover:text-[#3ABAE9]"
-              >
-                {item}
-              </a>
-            ))}
-
-          </div>
-
-        </div>
-
-
-        <div>
-
-          <h3 className="font-semibold">
-            Explore
-          </h3>
-
-          <div className="mt-4 space-y-3 text-sm text-gray-500">
-
-            {["PC Builder", "Custom PCs", "About Us", "Contact"].map((item) => (
-              <a
-                href="#"
-                key={item}
-                className="block transition hover:text-[#3ABAE9]"
-              >
-                {item}
-              </a>
-            ))}
-
-          </div>
-
-        </div>
-
-
-        <div>
-
-          <h3 className="font-semibold">
-            Support
-          </h3>
-
-          <div className="mt-4 space-y-3 text-sm text-gray-500">
-
-            {["Shipping", "Returns", "Privacy", "Terms"].map((item) => (
-              <a
-                href="#"
-                key={item}
-                className="block transition hover:text-[#3ABAE9]"
-              >
-                {item}
-              </a>
-            ))}
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-gray-600">
-        © 2026 Cyberflix Systems LLP. All rights reserved.
-      </div>
-
-    </div>
-
-  </footer>
+  
+  
 
 </div>)
 }
